@@ -1,0 +1,27 @@
+pulseAmplitude = 7000000
+ 
+pulsePhase = 0
+ 
+pulseFreqStart = 1.369*^9
+ 
+pulseFreqEnd = 1.5*^9
+ 
+calculations = 3000
+ 
+pulseFreqStep = 43666.666666666664
+ 
+\[Gamma]N = 1.9331*^7
+ 
+\[Gamma]e = 1.7609*^11
+ 
+B0 = 513/10000
+ 
+\[Omega]s = -1.43771296856036*^9
+ 
+\[Omega]I = 157830.8217118537
+ 
+Ahf = -2.16*^6
+ 
+Dzfs = 2870000000
+ 
+Pzfs = -4.95*^6
