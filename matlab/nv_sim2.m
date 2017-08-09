@@ -3,12 +3,12 @@ digits(32)
 % Physical constants
 
 hbar = 1;
-B0 = 513e-4; % [T] Applied DC field
+B0 = 0*513e-4; % [T] Applied DC field
 gamma_e = 1.7609e11; % [rad s^-1 T^-1] Electron gyromagnetic ratio.
 gamma_N14 = 19.331e16; % [rad s^-1 T^-1 N-14 gyromagnetic ratio.
 omega_e = - gamma_e * B0 / (2 * pi); % [Hz] Zeeman splitting of electron triplet
 omega_N14 = - gamma_N14 * B0 / (2 * pi); % [Hz] Zeeman splitting of N14
-D = 2870e6; % [Hz] Zero field splitting of electron triplet.
+Dzfs = 2870e6; % [Hz] Zero field splitting of electron triplet.
 P = - 4.95e6; % [Hz] Zero field splitting of N14.
 
 A_perp = 0; % [Hz] Hyperfine coupling constant, perpendicular to [1, 1, 1] axis. Can be neglected under secular approximation.
@@ -19,9 +19,9 @@ A_parallel = -2.16e6; % [Hz] hyperfine coupling constant on the z-axis
 phi = pi/4; % Phase of the perturbation.
 %f_MW_start = 500e6; % [Hz]
 %f_MW_end = 530e7; % [Hz]
-f_MW_start = 1.369e9; % [Hz]
-f_MW_end = 1.5e9; % [Hz]
-calculations = 2000;
+f_MW_start = 2.8e9; % [Hz]
+f_MW_end = 2.955e9; % [Hz]
+calculations = 20000;
 f_MW_step = (f_MW_end - f_MW_start) / calculations;
 
 tstart = 0;
@@ -35,7 +35,7 @@ spin_e_triplet = 1;
 spin_N = 1;
 
 NV_spins = [spin_e_triplet, spin_N]; % Spin of the electron triplet and the N-atom
-NV_zfs = [D, -omega_N14]; % Zero-field splitting of triplet and N respectively.
+NV_zfs = [Dzfs, -omega_N14]; % Zero-field splitting of triplet and N respectively.
 NV_zeeman = [omega_e, -omega_N14]; % Zeeman interactions
 
 % Parameters for the spin-bath
@@ -143,7 +143,7 @@ for i = 1:calculations
     avg_probs(i) = real(mean(probs));
     
     fprintf("Calculation " + i + " of " + calculations + "\n");
-    endQ
+end
 
 %ts = 0:delta_t:(tend-delta_t);
 %plot(ts*1e6, real(probs))
@@ -159,3 +159,4 @@ xlabel('Pulse frequency [Hz]');
 ylabel('Prob(T_0)');
 pl = plot(fs, avg_probs);
 saveas(pl,char(filename + ".pdf"));
+saveas(pl,char(filename + ".fig"));
