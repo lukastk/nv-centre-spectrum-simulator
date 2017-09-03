@@ -1,0 +1,32 @@
+comments = "Pulse that acts on both nuclear spin and electron spin. B0=0T. \
+Frequency Resolution=100000.Hz. Pulse amplitude=7000000Hz"
+ 
+totalSimulationTime = 3012.2446098833334
+ 
+pulseAmplitude = 7000000
+ 
+pulsePhase = 0
+ 
+pulseFreqStart = 2.575*^9
+ 
+pulseFreqEnd = 3.175*^9
+ 
+calculations = 6001
+ 
+pulseFreqStep = 100000.
+ 
+\[Gamma]N = 1.9331*^7
+ 
+\[Gamma]e = 1.7609*^11
+ 
+B0 = 0
+ 
+\[Omega]s = 0.
+ 
+\[Omega]I = 0.
+ 
+Ahf = {-2.1*^6, -2.1*^6, -2.16*^6}
+ 
+Dzfs = 2870000000
+ 
+Pzfs = -4.95*^6
